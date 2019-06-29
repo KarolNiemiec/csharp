@@ -1,0 +1,44 @@
+public static double ObjetoscStozka(double promien, double tworzaca)
+        {
+            double R = promien;
+            double L = tworzaca;
+            double H, P, V;
+
+            H = Math.Sqrt((L * L) - (R * R));
+            P = Math.PI * (R * R);
+            V = P / 3 * H;
+
+            return V;
+        }
+
+
+        static void Main(string[] args)
+        {
+            double promien;
+            double tworzaca;
+
+            try
+            {
+                Console.Write("Podaj Promien: ");
+                promien = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Podaj Tworzaca: ");
+                tworzaca = Convert.ToDouble(Console.ReadLine());
+                if (promien < 0.0 || tworzaca < 0.0)
+                {
+                    Console.WriteLine("Liczby nie mogą być mniejsze od 0 !");
+                }
+                else
+                {
+                    Console.WriteLine(ObjetoscStozka(promien, tworzaca));
+                }
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine("Wprowadzone dane są napisami lub są błędne");
+
+
+            }
+
+            Console.ReadKey();
+
+        }
