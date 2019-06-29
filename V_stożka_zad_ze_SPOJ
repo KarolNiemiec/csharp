@@ -1,0 +1,40 @@
+int R=0, L=0;
+            double H, P, V, a, b;
+
+            try
+            {
+                 R = Convert.ToInt32(args[0]);
+
+                 L = Convert.ToInt32(args[1]);
+            } catch
+            {
+                Console.Write("Błędne dane liczy za duże lub są napisami.");
+               
+            }
+            
+            if(R <= 1000000 && R >=-1000000 && L <= 1000000 && L >= -1000000)
+            {
+                H = Math.Sqrt((L * L) - (R * R));
+                P = Math.PI * (R * R);
+                V = P/3 * H;
+
+                a = Math.Floor(V);
+                b = Math.Ceiling(V);
+                if(a >= 0 && b >= 0 && a <= b )
+                {
+                    Console.Write($"{a} {b}");
+                } else if(a < 0 || b < 0)
+                {
+                    Console.Write("ujemny argument");
+                } else
+                {
+                    Console.Write("obiekt nie istnieje");
+                }
+               
+            } else
+            {
+                Console.Write("Liczby nie są z przedzialu -1000000 do 1000000");
+            }
+
+
+            Console.ReadKey();
